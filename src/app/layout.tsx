@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Work_Sans } from 'next/font/google'
 import "./globals.css";
+import Footer from "./components/Footer";
+import Main from "./components/Main";
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -21,11 +23,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${workSans.variable} antialiased min-h-screen bg-white`}
+        className={`${workSans.variable} min-h-screen flex flex-col bg-white `}
       >
-        <div className="mx-auto max-w-7xl px-4">
-          {children}
-        </div>
+        {children}
+        <Footer />
       </body>
     </html>
   );
