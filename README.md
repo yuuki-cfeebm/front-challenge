@@ -8,9 +8,7 @@
 - TailWind CSS
 - pnpm
 
-### Dia 1 (07/02/26)
-- Inicialização do projeto NEXT + REACT + TAILWIND
-- Gerenciador de pacotes: pnpm
+
 
 
 
