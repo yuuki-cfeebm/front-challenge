@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SearchBar from "./Home/SearchBar";
+import SearchBar from "./SearchBar";
 
 interface HeaderProps {
   page: "home" | "character"

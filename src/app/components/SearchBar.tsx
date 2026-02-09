@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
 
 interface SearchBarProps {
   className: string
@@ -6,6 +8,9 @@ interface SearchBarProps {
 }
 
 export default function SearchBar( { className, width }: SearchBarProps) {
+
+  const [search, setSearch] = useState("")
+
   return(
     <div className={`flex items-center px-8 py-10 gap-10 relative ${width}`}>
       <Image 
@@ -19,6 +24,8 @@ export default function SearchBar( { className, width }: SearchBarProps) {
         type="text"
         className={`rounded-full pl-20 outline-none ${className} w-full`}
         placeholder="Procure por Heróis"
+        onChange={(e) => setSearch(e.target.value)}
+        value={search}
       />
     </div>
   )

@@ -15,7 +15,7 @@ export default async function page({ params }: PageProps) {
       <div className="flex">
         <BackgroundName character={character} />
         <CharacterInfo character={character}>
-          <CharacterFavorite />
+          <CharacterFavorite character={character}/>
         </CharacterInfo>
         <CharacterImg character={character} />
       </div>

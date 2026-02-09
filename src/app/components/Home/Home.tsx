@@ -1,4 +1,4 @@
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar";
 import Favorites from "./Filter";
 import { Character } from "@/types/character";
 import CharactersList from "./CharactersList";
