@@ -13,6 +13,17 @@ Aplicação Web desenvolvida com Next.js e React para listagem e visualização 
 - Fetch API
 - SuperHero API
 
+### Home
+<img width="1903" height="944" alt="image" src="https://github.com/user-attachments/assets/f694aa02-b6b5-4c2a-aee7-56ab48016deb" />
+
+### Filtro de pesquisa por nome
+<img width="1904" height="931" alt="image-2" src="https://github.com/user-attachments/assets/0d9dab79-08dd-4841-8bdd-5ac076825508" />
+
+### Filtro de Favoritos
+<img width="1901" height="931" alt="image-1" src="https://github.com/user-attachments/assets/fd6c167d-1c5a-4632-a6d8-496756b98a7f" />
+
+### Visualização da página de personagem
+<img width="1903" height="941" alt="image-3" src="https://github.com/user-attachments/assets/280cba9e-58e2-4bd3-b8e6-4f922f22508a" />
 
 ## Funcionalidades
 
