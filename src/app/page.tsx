@@ -1,15 +1,11 @@
-import { GetCharacters } from "./api/characters/route";
-import HomeHeader from "./components/Header/HomeHeader";
+import { Character } from "@/types/character";
+import { fetchCharacters } from "@/lib/characters";
 import Home from "./components/Home/Home";
 
 export default async function Page() {
-
-  const characters = await GetCharacters()
+  const characters = await fetchCharacters();
 
   return (
-    <>
-      <HomeHeader />
-      <Home characters={characters}/>
-    </>
+    <Home characters={characters || []} />
   )
 }
