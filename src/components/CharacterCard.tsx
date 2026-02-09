@@ -20,7 +20,8 @@ export default function CharacterCard({ character }: { character: Character }) {
           src={character.image.url}
           alt={`img-${character.name}`}
           fill
-          className="contain"
+          className="relative object-contain"
+          unoptimized
         />
         <div className="flex justify-center items-center absolute w-full h-full  bg-orange bottom-[-245px] transition-transform duration-500 ease-in-out group-hover:translate-y-[-245px]">
           <span className="text-xl font-bold">Ver mais</span>
