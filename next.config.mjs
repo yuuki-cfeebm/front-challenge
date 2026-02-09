@@ -5,16 +5,15 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.superherodb.com',
-        pathname: '/**', // Permite qualquer caminho dentro desse domínio
+        pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'cdn.superheroapi.com',
+        hostname: 'superherodb.com',
         pathname: '/**',
-      },
-    
-    ]
-  }
+      }
+    ],
+  },
 };
 
 export default nextConfig;
