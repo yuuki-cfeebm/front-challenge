@@ -10,7 +10,7 @@ export default function CharacterCard({ character }: { character: Character }) {
 
   return (
     <div 
-      className="flex flex-col gap-4 w-[250px] "
+      className="flex flex-col gap-4 max-w-[250px]"
     >
       <Link 
         href={`/character/${character.id}`} 
@@ -20,9 +20,9 @@ export default function CharacterCard({ character }: { character: Character }) {
           src={character.image.url}
           alt={`img-${character.name}`}
           fill
-          className=" object-cover"
+          className="object-cover"
         />
-        <div className="flex justify-center items-center absolute w-full h-full  bg-orange bottom-[-245px] transition-transform duration-500 ease-in-out group-hover:translate-y-[-245px]">
+        <div className="flex justify-center items-center absolute w-full h-full bg-orange bottom-[-245px] transition-transform duration-500 ease-in-out group-hover:translate-y-[-245px]">
           <span className="text-xl font-bold">Ver mais</span>
         </div>
       </Link>

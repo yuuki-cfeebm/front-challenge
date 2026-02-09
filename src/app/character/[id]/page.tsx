@@ -12,7 +12,7 @@ export default async function page({ params }: PageProps) {
 
   return(
     <div className="flex flex-col w-full relative gap-20">
-      <div className="flex">
+      <div className="flex flex-col-reverse items-center md:flex-row md:items-center md:justify-between lg:flex-row lg:items-end lg:justify-between gap-10">
         <BackgroundName character={character} />
         <CharacterInfo character={character}>
           <CharacterFavorite character={character}/>

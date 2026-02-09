@@ -12,7 +12,7 @@ export default function CharactersList( {characters }: {characters: Character[]}
 
   return(
     <div className="w-full flex justify-center pb-24">
-      <div className="grid grid-cols-4 gap-6 justify-items-center w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center w-full">
         {filter ? (
           favorites.map(fav => 
             <CharacterCard key={fav.id} character={fav}/>

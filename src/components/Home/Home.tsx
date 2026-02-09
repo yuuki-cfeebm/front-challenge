@@ -13,15 +13,6 @@ export default function Home( {characters}: {characters: Character[]}) {
   const [search, setSearch] = useState("")
   const { favorites, filter } = useFavorites()
   const [page, setPage] = useState(1)
-  
-  // const filteredCharacters = characters.filter(character =>
-  //   character.name.toLowerCase().includes(search.toLowerCase())
-  // ).sort((a, b) => a.name.localeCompare(b.name))
-
-  // const totalPages = Math.ceil(filteredCharacters.length / ITEMS_PER_PAGE)
-  // const startIdx = (page - 1) * ITEMS_PER_PAGE
-  // const endIdx = startIdx + ITEMS_PER_PAGE
-  // const paginatedCharacters = filteredCharacters.slice(startIdx, endIdx)
 
   const baseCharacters = filter ? favorites : characters
 
@@ -45,10 +36,15 @@ export default function Home( {characters}: {characters: Character[]}) {
   return(
     <>
       <div className="flex flex-col justify-center items-center">
-        <p className="text-gray-1 text-2xl uppercase font-bold">explore o universo</p>
-        <p className="text-gray-2">Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
+        <p className="text-center text-gray-1 text-2xl uppercase font-bold">explore o universo</p>
+        <p className="text-center text-gray-2">Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
       </div>
-      <SearchBar value={search} onChange={(e) => setSearch(e.target.value)} className="bg-light-orange text-orange placeholder:text-orange h-16" width="w-2/3"/>
+      <SearchBar 
+        value={search} 
+        onChange={(e) => setSearch(e.target.value)} 
+        className="bg-light-orange text-orange placeholder:text-orange h-16" 
+        width="w-full md:w-full lg:w-2/3"
+      />
       <Favorites count={filter ? favorites.length : filteredCharacters.length}/>
       <CharactersList characters={paginatedCharacters}/>
       

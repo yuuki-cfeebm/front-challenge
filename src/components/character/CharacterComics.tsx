@@ -9,9 +9,9 @@ export default function CharacterComics({ character }: CharacterComicsProps) {
   }
 
   return(
-    <div className="flex flex-col gap-20 w-full pb-52">
+    <div className="flex flex-col items-center md:items-start lg:items-start gap-20 w-full pb-52">
       <p className="font-bold text-2xl text-gray-1">Últimos Lançamentos</p>
-      <div className="w-full flex flex-wrap gap-12">
+      <div className="grid grid-cols-2 md:flex lg:flex flex-wrap gap-12">
         {Array.from({ length: 10}).map((_, index) => (
           <div 
             key={index}

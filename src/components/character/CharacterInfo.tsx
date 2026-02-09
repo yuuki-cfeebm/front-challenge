@@ -8,15 +8,15 @@ type CharacterInfoProps = {
 
 export default function CharacterInfo( { character, children }: CharacterInfoProps) {
   return(
-    <div className="flex flex-col gap-10 w-1/4 ">
+    <div className="flex flex-col gap-10 max-w-[300px] w-full ">
       <div className="flex justify-between items-start uppercase ">
         <div className="flex flex-col">
-          <p className="text-gray-1 font-bold text-4xl">{character?.name}</p>
-          <p className="text-gray-2 font-bold ">{!character?.biography?.['full-name'] ? "Sem nome pessoal" : character?.biography?.['full-name']}</p>
+          <p className="text-gray-1 font-bold text-xl md:text-2xl lg:text-4xl">{character?.name}</p>
+          <p className="text-gray-2 font-bold text-sm md:text-md lg:text-xl">{!character?.biography?.['full-name'] ? "Sem nome pessoal" : character?.biography?.['full-name']}</p>
         </div>
         {children}
       </div>
-      <div className="flex gap-1">
+      <div className="flex justify-between">
         <div className="">
           <p className="text-gray-1 font-bold">Aparência: </p>
           <div>
@@ -39,7 +39,7 @@ export default function CharacterInfo( { character, children }: CharacterInfoPro
         </div>
       </div>
       <div className="flex flex-col gap-10">
-        <div className="flex gap-20 text-gray-1">
+        <div className="flex justify-between  text-gray-1 ">
           <div className="flex flex-col gap-2">
             <span className="text-gray-1 font-bold">Quadrinhos</span>
             <div className="flex items-center gap-6">
