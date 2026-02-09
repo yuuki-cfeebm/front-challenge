@@ -36,6 +36,7 @@ Aplicação Web desenvolvida com Next.js e React para listagem e visualização 
 - Paginação dos personagens (20 por página)
 - Navegação utilizando Next.js App Router
 - Componentes reutilizáveis
+- Layout Responsivo
 
 # Instalação
 ### Pré-requisitos
