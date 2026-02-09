@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.superherodb.com", "cdn.superheroapi.com"]
+    remotePatterns: ["www.superherodb.com", "cdn.superheroapi.com"]
   }
 };
 
