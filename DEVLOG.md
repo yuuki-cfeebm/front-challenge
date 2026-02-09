@@ -37,3 +37,4 @@
 - Adiciona os favoritos no localStorage para permanecer após o carregamento da página
 - Implementação de favorito quando entra em um personagem específico
 - Implementação do filtro por barra de pesquisa na home
+- Criação de um context para pesquisa
