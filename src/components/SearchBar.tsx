@@ -4,6 +4,7 @@ import { Character } from "@/types/character";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import SearchItem from "./SearchItem";
+import { usePathname } from "next/navigation";
 
 interface SearchBarProps {
   className: string
@@ -21,6 +22,7 @@ export default function SearchBar( { width, className, characters, page, onChang
   const [open, setOpen] = useState(false)
   const ref= useRef<HTMLDivElement>(null)
   const { search, setSearch} = useSearch()
+  const pathName = usePathname()
 
   useEffect(() => {
   function handleClickOutside(event: MouseEvent) {
@@ -35,11 +37,16 @@ export default function SearchBar( { width, className, characters, page, onChang
   }
   }, [])
 
-    const filteredCharacters = search.length > 0 
-    ? (characters || [])
-      .filter(character => character.name.toLowerCase().includes(search.toLowerCase()))
-      .slice(0, 5) 
-    : []
+
+  useEffect(() => {
+    setSearch("")
+  }, [pathName])
+
+  const filteredCharacters = search.length > 0 
+  ? (characters || [])
+    .filter(character => character.name.toLowerCase().includes(search.toLowerCase()))
+    .slice(0, 5) 
+  : []
   
 
   return(
