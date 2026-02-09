@@ -2,7 +2,14 @@ import { Character } from "@/types/character";
 
 const BASE_URL = process.env.SUPERHERO_API_URL;
 
-function normalizeAppearance(a: any) {
+interface Appearance {
+  gender: string
+  race: string
+  height: string[]
+  weight: string[]
+}
+
+function normalizeAppearance(a: Appearance) {
   if (!a) return a;
 
   return {
@@ -27,8 +34,9 @@ export async function fetchCharacter(id: string | number): Promise<Character | n
     if (data.response !== 'success') return null;
     data.appearance = normalizeAppearance(data.appearance);
     return data
-  } catch (err) {
-    return null;
+  } catch(err) {
+    console.error("fetchCharacter error", err)
+    return null
   }
 }
 

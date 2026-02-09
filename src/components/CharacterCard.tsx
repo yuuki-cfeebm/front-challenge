@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import { Character } from "@/types/character";
-import { useState } from "react";
 import Link from "next/link";
 import useFavorites from "@/context/FavoritesContext";
 
@@ -21,7 +20,7 @@ export default function CharacterCard({ character }: { character: Character }) {
           src={character.image.url}
           alt={`img-${character.name}`}
           fill
-          objectFit="object-contain"
+          className="contain"
         />
         <div className="flex justify-center items-center absolute w-full h-full  bg-orange bottom-[-245px] transition-transform duration-500 ease-in-out group-hover:translate-y-[-245px]">
           <span className="text-xl font-bold">Ver mais</span>

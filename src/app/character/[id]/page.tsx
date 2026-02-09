@@ -1,9 +1,9 @@
-import BackgroundName from "@/app/components/character/BackgroundName"
-import CharacterFavorite from "@/app/components/character/CharacterFavorite"
-import CharacterInfo from "@/app/components/character/CharacterInfo"
-import CharacterImg from "@/app/components/character/CharacterImg"
+import BackgroundName from "@/components/character/BackgroundName"
+import CharacterFavorite from "@/components/character/CharacterFavorite"
+import CharacterInfo from "@/components/character/CharacterInfo"
+import CharacterImg from "@/components/character/CharacterImg"
 import { fetchCharacter } from "@/lib/characters"
-import CharacterComics from "@/app/components/character/CharacterComics"
+import CharacterComics from "@/components/character/CharacterComics"
 
 type PageProps = { params: { id: string } }
 

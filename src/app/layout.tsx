@@ -1,10 +1,10 @@
 "use client"
 import { Work_Sans } from 'next/font/google'
 import "./globals.css";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
+import Footer from "../components/Footer";
+import Main from "../components/Main";
 import { usePathname } from "next/navigation";
-import Header from "./components/Header";
+import Header from "../components/Header";
 import { FavoritesProvider } from '@/context/FavoritesContext';
 import { SearchProvider } from '@/context/SearchContext';
 

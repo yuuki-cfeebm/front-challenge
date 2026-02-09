@@ -1,8 +1,6 @@
 "use client"
 import useFavorites from "@/context/FavoritesContext";
-import { Character } from "@/types/character";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function Filter( { count }: {count: React.ReactNode} ) {
 

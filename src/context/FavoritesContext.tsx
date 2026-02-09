@@ -1,7 +1,6 @@
 "use client"
 import { Character } from "@/types/character"
-import { error } from "console"
-import { createContext, useActionState, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
 type FavoritesContextType = {
   favorites: Character[]
@@ -14,27 +13,36 @@ type FavoritesContextType = {
 
 const FavoritesContext = createContext<FavoritesContextType | null>(null)
 
-export function FavoritesProvider({ children }: {children: React.ReactNode}) {
+export function FavoritesProvider({ children }: { children: React.ReactNode }) {
 
   const [filter, setFilter] = useState(false)
-  const [favorites, setFavorites] = useState<Character[]>(() => {
-    const stored = localStorage.getItem("@favorites")
-    return stored ? JSON.parse(stored) : []
-  })
+  
+  const [favorites, setFavorites] = useState<Character[]>([])
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem("@favorites", JSON.stringify(favorites))
-  },[favorites])
+    const stored = localStorage.getItem("@favorites")
+    if (stored) {
+      setFavorites(JSON.parse(stored))
+    }
+    setIsLoaded(true)
+  }, [])
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("@favorites", JSON.stringify(favorites))
+    }
+  }, [favorites, isLoaded])
 
   function handleFavorites(character: Character) {
     setFavorites(prev => {
       const exists = prev.some(item => item.id === character.id)
 
-      if(exists) {
+      if (exists) {
         return prev.filter(item => item.id !== character.id)
       }
 
-      if(prev.length >= 5) {
+      if (prev.length >= 5) {
         alert("É possível adicionar somente 5 favoritos")
         return prev
       }
@@ -42,9 +50,7 @@ export function FavoritesProvider({ children }: {children: React.ReactNode}) {
       return [...prev, character]
     })
   }
-      console.log(favorites)
-
-
+  
   function isFavorite(id: string) {
     return favorites.some(item => item.id === id)
   }
@@ -62,6 +68,6 @@ export function FavoritesProvider({ children }: {children: React.ReactNode}) {
 
 export default function useFavorites() {
   const context = useContext(FavoritesContext)
-  if(!context) throw new Error("useFavorites must be used within FavoritesProvider")
-    return context
+  if (!context) throw new Error("useFavorites must be used within FavoritesProvider")
+  return context
 }
