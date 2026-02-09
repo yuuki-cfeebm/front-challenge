@@ -22,3 +22,18 @@
 - Implementa animação quando passa o mouse sobre o card na Home
 - tag Link do next utilizada no card dos personagens
 - Criação de rota dinâmica que recebe ID do personagem atual
+
+### Dia 2 (08/02/26)
+- Ajuste no Link da rota dinâmica
+- Implementação do Header da um personagem específico
+- Criação da estrutura da página de um personagem específico
+- Criação de outra função para retornar apenas as informações do heroi do ID especificado
+- Criação de componentes da página de personagem específico
+- Renderização das informações de um personagem
+- Criação do componente de quadrinhos do personagem
+- Move funções de personagens para lib/characters
+- Criação de um context para armazenar personagens salvos
+- Implementação de filtro de ordem alfabética e favoritos com limitação de 5
+- Adiciona os favoritos no localStorage para permanecer após o carregamento da página
+- Implementação de favorito quando entra em um personagem específico
+- Implementação do filtro por barra de pesquisa na home
