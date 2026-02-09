@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import { usePathname } from "next/navigation";
 import Header from "./components/Header";
+import { FavoritesProvider } from '@/context/FavoritesContext';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -24,13 +25,15 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${workSans.variable} min-h-screen flex flex-col ${pathName === "character" ? "bg-light-blue" : "bg-white"}`}
+        className={`${workSans.variable} min-h-screen flex flex-col ${type === "character" ? "bg-light-blue" : "bg-white"}`}
       >
-        <Header page={type}/>
-        <Main>
-          {children}
-        </Main>
-        <Footer />
+        <FavoritesProvider>
+          <Header page={type}/>
+          <Main>
+            {children}
+          </Main>
+          <Footer />
+        </FavoritesProvider>
       </body>
     </html>
   );

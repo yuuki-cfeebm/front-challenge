@@ -1,10 +1,11 @@
 "use client"
+import useFavorites from "@/context/FavoritesContext";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Filter() {
 
-  const [toggleFilter, setToggleFilter] = useState(false)
+  const { handleFilter, filter } = useFavorites()
 
   return(
     <div className="flex justify-between items-center text-orange w-full py-6">
@@ -19,8 +20,8 @@ export default function Filter() {
           />
           <span>Ordenar por nome - A/Z</span>
         </div>
-        <button onClick={() => setToggleFilter(!toggleFilter)}>
-          { toggleFilter ? 
+        <button onClick={handleFilter}>
+          { filter ? 
             <Image 
               src={"images/toggle/right.svg"}
               alt="icon-toggle-right"

@@ -3,10 +3,11 @@ import Image from "next/image";
 import { Character } from "@/types/character";
 import { useState } from "react";
 import Link from "next/link";
+import useFavorites from "@/context/FavoritesContext";
 
 export default function CharacterCard({ character }: { character: Character }) {
-
-  const [favorites, setFavorites] = useState(false)
+  
+  const { handleFavorites, isFavorite } = useFavorites()
 
   return (
     <div 
@@ -28,8 +29,8 @@ export default function CharacterCard({ character }: { character: Character }) {
       </Link>
       <div className="flex justify-between items-center w-full">
         <p className="text-black">{character.name}</p>
-        <button onClick={() => setFavorites(!favorites)}>
-          { favorites ?
+        <button onClick={() => handleFavorites(character)}>
+          { isFavorite(character.id) ?
             <Image 
               src={"images/icons/heart/heart-home-on.svg"}
               alt="icon-heart"
