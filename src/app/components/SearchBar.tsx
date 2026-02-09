@@ -5,11 +5,11 @@ import { useState } from "react";
 interface SearchBarProps {
   className: string
   width: string
+  value: string
+  onChange: (value: string) => void
 }
 
-export default function SearchBar( { className, width }: SearchBarProps) {
-
-  const [search, setSearch] = useState("")
+export default function SearchBar( { width, className, onChange, value }: SearchBarProps) {
 
   return(
     <div className={`flex items-center px-8 py-10 gap-10 relative ${width}`}>
@@ -24,8 +24,8 @@ export default function SearchBar( { className, width }: SearchBarProps) {
         type="text"
         className={`rounded-full pl-20 outline-none ${className} w-full`}
         placeholder="Procure por Heróis"
-        onChange={(e) => setSearch(e.target.value)}
-        value={search}
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
       />
     </div>
   )
