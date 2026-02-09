@@ -25,7 +25,7 @@ export default function Header( { characters }: HeaderProps) {
           /> 
       </nav>
       ) : (
-        <nav className="flex items-center gap-5  max-w-[1500px] p-4 mx-auto">
+        <nav className="flex items-center gap-5 max-w-[1500px] p-4 mx-auto pb-12">
           <Link 
             href={"http://localhost:3000"}
           >

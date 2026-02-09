@@ -44,7 +44,7 @@ export default function SearchBar( { width, className, characters, page, onChang
 
   return(
     page === "home" ? (
-      <div className={`flex justify-center gap-10 relative ${width}`}
+      <div className={`flex justify-center gap-10 relative pt-6 ${width}`}
     >
       <div className="flex items-center w-full ">
         <Image 
@@ -69,7 +69,7 @@ export default function SearchBar( { width, className, characters, page, onChang
       ref={ref}
       className={`flex justify-center gap-10 relative ${width}`}
     >
-      <div className="flex items-center w-full ">
+      <div className="flex items-center w-full">
         <Image 
           src={"/images/busca/lupa.svg"}
           alt="img-rectangle"
