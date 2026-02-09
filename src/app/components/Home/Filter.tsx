@@ -4,13 +4,13 @@ import { Character } from "@/types/character";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Filter( { children }: {children: React.ReactNode} ) {
+export default function Filter( { count }: {count: React.ReactNode} ) {
 
   const { handleFilter, filter } = useFavorites()
 
   return(
     <div className="flex justify-between items-center text-orange w-full py-6">
-      <p className="text-gray-2">Encontrados {children} heróis</p>
+      <p className="text-gray-2">Encontrados {count} heróis</p>
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <Image 
