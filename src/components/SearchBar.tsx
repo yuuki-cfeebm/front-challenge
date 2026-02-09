@@ -91,7 +91,7 @@ export default function SearchBar( { width, className, characters, page, onChang
           className="flex flex-col w-full absolute top-20 left-0 rounded-b-xl z-20 shadow-lg bg-white"
         >
           { filteredCharacters.map(character => (
-            <SearchItem character={character}/>
+            <SearchItem key={character.id} character={character}/>
           ))}
         </div>
       )}
