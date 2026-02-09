@@ -1,12 +1,12 @@
-"use client"
 import { Work_Sans } from 'next/font/google'
 import "./globals.css";
 import Footer from "../components/Footer";
 import Main from "../components/Main";
-import { usePathname } from "next/navigation";
 import Header from "../components/Header";
 import { FavoritesProvider } from '@/context/FavoritesContext';
 import { SearchProvider } from '@/context/SearchContext';
+import { fetchCharacters } from '@/lib/characters';
+import BackgroundController from '@/components/BackgroundController';
 
 const workSans = Work_Sans({
   subsets: ['latin'],
@@ -14,23 +14,23 @@ const workSans = Work_Sans({
   variable: '--font-work-sans',
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  const pathName = usePathname()
-  const type = pathName.startsWith("/character") ? "character" : "home"
+  const characters = await fetchCharacters()
 
   return (
     <html lang="pt-BR">
       <body
-        className={`${workSans.variable} min-h-screen flex flex-col ${type === "character" ? "bg-light-blue" : "bg-white"}`}
+        className={`${workSans.variable} min-h-screen flex flex-col `}
       >
         <SearchProvider>
           <FavoritesProvider>
-            <Header page={type}/>
+            <BackgroundController />
+            <Header characters={characters}/>
             <Main>
               {children}
             </Main>
