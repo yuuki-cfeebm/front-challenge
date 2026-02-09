@@ -35,14 +35,21 @@ export async function fetchCharacter(id: string | number): Promise<Character | n
 export async function fetchCharacters(limit = 40): Promise<Character[]> {
   if (!BASE_URL) return [];
 
-  const ids = Array.from({ length: limit }, (_, i) => i + 1);
+  const ids = Array.from(
+    { length: limit },
+    (_, i) => i + 1
+  );
   const results = await Promise.all(
     ids.map(async (id) => {
       try {
-        const res = await fetch(`${BASE_URL}/${id}`, { next: { revalidate: 60 } });
+        const res = await fetch(`${BASE_URL}/${id}`, {
+           next: { revalidate: 60 } 
+        });
+
         if (!res.ok) return null;
         const data = await res.json();
-        return data.response === 'success' ? { ...data, appearance: normalizeAppearance(data.appearance) } : null;
+        return data.response === 'success' 
+          ? { ...data, appearance: normalizeAppearance(data.appearance) } : null;
       } catch {
         return null;
       }
