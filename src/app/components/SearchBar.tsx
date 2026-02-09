@@ -1,12 +1,10 @@
-"use client"
 import Image from "next/image";
-import { useState } from "react";
 
 interface SearchBarProps {
   className: string
   width: string
   value: string
-  onChange: (value: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default function SearchBar( { width, className, onChange, value }: SearchBarProps) {
@@ -24,7 +22,7 @@ export default function SearchBar( { width, className, onChange, value }: Search
         type="text"
         className={`rounded-full pl-20 outline-none ${className} w-full`}
         placeholder="Procure por Heróis"
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
         value={value}
       />
     </div>

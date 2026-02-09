@@ -17,14 +17,13 @@ const FavoritesContext = createContext<FavoritesContextType | null>(null)
 export function FavoritesProvider({ children }: {children: React.ReactNode}) {
 
   const [filter, setFilter] = useState(false)
-  
   const [favorites, setFavorites] = useState<Character[]>(() => {
-    const stored = localStorage.getItem("favorites")
+    const stored = localStorage.getItem("@favorites")
     return stored ? JSON.parse(stored) : []
   })
 
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites))
+    localStorage.setItem("@favorites", JSON.stringify(favorites))
   },[favorites])
 
   function handleFavorites(character: Character) {
@@ -63,6 +62,6 @@ export function FavoritesProvider({ children }: {children: React.ReactNode}) {
 
 export default function useFavorites() {
   const context = useContext(FavoritesContext)
-  if(!context) throw new Error("Deve ser usando dentro de FavoritesProvider")
+  if(!context) throw new Error("useFavorites must be used within FavoritesProvider")
     return context
 }

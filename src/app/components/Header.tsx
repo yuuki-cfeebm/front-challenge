@@ -1,11 +1,15 @@
 import Image from "next/image";
 import SearchBar from "./SearchBar";
+import useSearch from "@/context/SearchContext";
 
 interface HeaderProps {
   page: "home" | "character"
 }
 
 export default function Header( { page }: HeaderProps) {
+
+  const { search, setSearch} = useSearch()
+
   return(
     <header className="w-full">
       { page == "home" ? (
@@ -26,7 +30,9 @@ export default function Header( { page }: HeaderProps) {
           height={100}
           /> 
           <div className="w-2/3">
-            <SearchBar className="bg-white text-gray-2 placeholder:text-gray-2 h-14" width="w-full"/>
+            <SearchBar 
+              value={search} onChange={(e) => setSearch(e.target.value)} className="bg-white text-gray-2 placeholder:text-gray-2 h-14" width="w-full"
+            />
           </div>
         </nav>
       )
