@@ -41,3 +41,5 @@
 
 ### Dia 3 (09/02/26)
 - Implementa Responsividade
+- Implementação da pesquisa na página de personagem único
+- Filtro de pesquisa na página de personagem único tem visualização de até 5 personagens

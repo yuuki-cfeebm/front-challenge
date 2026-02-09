@@ -1,19 +1,21 @@
+"use client"
 import Image from "next/image";
 import SearchBar from "./SearchBar";
-import useSearch from "@/context/SearchContext";
 import Link from "next/link";
+import { Character } from "@/types/character";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
-  page: "home" | "character"
+  characters: Character[]
 }
 
-export default function Header( { page }: HeaderProps) {
+export default function Header( { characters }: HeaderProps) {
 
-  const { search, setSearch} = useSearch()
+  const pathName = usePathname()
 
   return(
     <header className="w-full">
-      { page == "home" ? (
+      { pathName == "/" ? (
       <nav className="flex justify-center max-w-[1500px] py-6 mx-auto">
         <Image 
           src={"/images/icons/logo.svg"} 
@@ -37,7 +39,10 @@ export default function Header( { page }: HeaderProps) {
 
           <div className="w-2/3">
             <SearchBar 
-              value={search} onChange={(e) => setSearch(e.target.value)} className="bg-white text-gray-2 placeholder:text-gray-2 h-14" width="w-full"
+              page="character"
+              characters={characters}
+              className="bg-white text-gray-2 placeholder:text-gray-2 h-14" 
+              width="w-full"
             />
           </div>
         </nav>

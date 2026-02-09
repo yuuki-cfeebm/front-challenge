@@ -40,8 +40,10 @@ export default function Home( {characters}: {characters: Character[]}) {
         <p className="text-center text-gray-2">Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
       </div>
       <SearchBar 
-        value={search} 
-        onChange={(e) => setSearch(e.target.value)} 
+        page="home"
+        onChange={(e) => setSearch(e.target.value)}
+        value={search}
+        characters={characters}
         className="bg-light-orange text-orange placeholder:text-orange h-16" 
         width="w-full md:w-full lg:w-2/3"
       />
