@@ -21,7 +21,7 @@ export default function CharacterImg({ character }: CharacterImgProps) {
           src={character.image.url}
           alt={`img-${character.name}`}
           fill
-          className="relative z-10 rounded-xl object-contain"
+          className="relative z-10 rounded-xl object-cover"
         />
       </div>
     </div>
