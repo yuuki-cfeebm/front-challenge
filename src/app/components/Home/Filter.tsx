@@ -7,12 +7,12 @@ export default function Filter() {
   const [toggleFilter, setToggleFilter] = useState(false)
 
   return(
-    <div className="flex justify-between items-center text-orange w-full py-6"> {/*parte de favoritos*/}
+    <div className="flex justify-between items-center text-orange w-full py-6">
       <p className="text-gray-2">Encontrados 40 Heróis</p>
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <Image 
-            src={"images/hero.svg"}
+            src={"images/icons/hero.svg"}
             alt="icon-hero"
             width={20}
             height={20}

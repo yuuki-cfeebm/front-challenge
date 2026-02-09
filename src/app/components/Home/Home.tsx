@@ -1,4 +1,4 @@
-import HomeHeader from "../Header/HomeHeader";
+import HomeHeader from "../Header";
 import Main from "../Main";
 import SearchBar from "./SearchBar";
 import Favorites from "./Filter";
@@ -12,7 +12,7 @@ export default function Home( {characters}: {characters: Character[]}) {
           <p className="text-gray-1 text-2xl uppercase font-bold">explore o universo</p>
           <p className="text-gray-2">Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama - e aqueles que você descobrirá em breve!</p>
         </div>
-        <SearchBar />
+        <SearchBar className="bg-light-orange text-orange placeholder:text-orange h-16" width="w-2/3"/>
         <Favorites />
         <CharactersList characters={characters}/>
       </Main>
